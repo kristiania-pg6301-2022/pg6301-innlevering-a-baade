@@ -7,14 +7,14 @@
 - [x] npm install/root
     - `npm i -D parcel jest prettier babel-jest "@babel/preset-env"`
     - `npm i -P react react-dom react-router-dom`
-- [ ] Create client side files
-- [ ] `npm init`/client
-- [ ] npm install/client
+- [x] Create client side files
+- [x] `npm init`/client
+- [x] npm install/client
     - `npm i -D parcel jest prettier babel-jest "@babel/preset-env`
     - `npm i -P react react-dom react-router-dom`
-- [ ] Create server side files
-- [ ] `npm init`/server
-- [ ] npm install/server
+- [x] Create server side files
+- [x] `npm init`/server
+- [x] npm install/server
     - `npm i -D express body-parser`
     - `npm i -P nodemon`
 

@@ -4,6 +4,10 @@
   "description": "- [x] Create a READE.md\r - [x] `npm init`/root\r - [x] npm install/root\r     - `npm i -D parcel jest prettier \"babel-jest @babel/preset-env\"`\r     - `npm i -P react react-dom react-router-dom`\r - [ ] Create client side files\r - [ ] `npm init`/client\r - [ ] npm install/client\r     - `npm i -D parcel jest prettier babel-jest @babel/preset-env`\r     - `npm i -P react react-dom react-router-dom`\r - [ ] Create server side files\r - [ ] `npm init`/server\r - [ ] npm install/server\r     - `npm i -D express body-parser`\r     - `npm i -P nodemon`",
   "main": "index.js",
   "scripts": {
+    "start": "cd server && npm start",
+    "build": "cd server && npm install",
+    "format": "prettier --write **/*.{js,jsx,ts,tsx}",
+    "format:check": "prettier --check **/*.{js,jsx,ts,tsx}",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +22,7 @@
   "homepage": "https://github.com/kristiania-pg6301-2022/pg6301-innlevering-a-baade#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
     "babel-jest": "^27.5.1",
     "jest": "^27.5.1",
     "parcel": "^2.3.1",
