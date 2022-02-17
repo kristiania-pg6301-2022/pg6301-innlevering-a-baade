@@ -1,4 +1,4 @@
-#<ins>Innlevering: React og Express på Heroku</ins>
+# <ins>Innlevering: React og Express på Heroku</ins>
 
 ## **Initial setup**
 
@@ -32,3 +32,5 @@
 
 ## List questions
 - [x] import *quiz.js* 
+- [x] Return list of random questions
+- [ ] Answer question function
