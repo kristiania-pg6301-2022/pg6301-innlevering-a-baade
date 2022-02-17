@@ -1,12 +1,25 @@
 import express from "express";
-import { randomQuestion } from "./quiz.js";
+import { randomQuestion, isCorrectAnswer, Questions } from "./quiz.js";
 import * as path from "path";
 
 const app = express();
 
 app.get("/api/question/random", (req, res) => {
-  const question = randomQuestion();
-  res.json(question);
+  const { id, question, answer } = randomQuestion();
+  res.json({ id, question, answer });
+});
+
+app.post("/api/quiz/answer", (req, res) => {
+  const { id, answer } = req.body;
+  const question = Questions.find((q) => q.id === id);
+  if (!question) {
+    return res.sendStatus(404);
+  }
+  if (isCorrectAnswer(question, answer)) {
+    return res.json({ result: "correct" });
+  } else {
+    return res.json({ result: "incorrect" });
+  }
 });
 
 app.use(express.static("../client/dist"));
