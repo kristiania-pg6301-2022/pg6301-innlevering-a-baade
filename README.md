@@ -31,6 +31,6 @@
     - Route with `<Link to="...">`
 
 ## List questions
-- [x] import *quiz.js* 
+- [x] import *questions.js* 
 - [x] Return list of random questions
 - [ ] Answer question function

@@ -2,7 +2,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import * as path from "path";
-import { isCorrectAnswer, Questions, randomQuestion } from "./quiz.js";
+import { isCorrectAnswer, Questions, randomQuestion } from "./questions.js";
 import bodyParser from "body-parser";
 
 dotenv.config();
@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
-app.get("/quiz/score", (req, res) => {
+app.get("api/quiz/score", (req, res) => {
   const score = req.signedCookies.score
     ? JSON.parse(req.signedCookies.score)
     : {
@@ -21,12 +21,12 @@ app.get("/quiz/score", (req, res) => {
   res.json(score);
 });
 
-app.get("/quiz/random", (req, res) => {
+app.get("api/quiz/random", (req, res) => {
   const { id, question, answers } = randomQuestion();
   res.json({ id, question, answers });
 });
 
-app.post("/quiz/answer", (req, res) => {
+app.post("api/quiz/answer", (req, res) => {
   const { id, answer } = req.body;
   const score = req.signedCookies.score
     ? JSON.parse(req.signedCookies.score)
