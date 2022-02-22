@@ -4,3 +4,4 @@
 .parcel-cache/
 dist/
 /server/node_modules/
+/server/.env

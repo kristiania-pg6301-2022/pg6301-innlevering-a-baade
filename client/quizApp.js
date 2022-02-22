@@ -6,7 +6,7 @@ export function Frontpage() {
   return (
     <div>
       <h1>Quiz Broadcast</h1>
-      <Link to={"question"} Answer questions>
+      <Link to={"/question"} Answer questions>
         <button>Remain indoors</button>
       </Link>
     </div>
