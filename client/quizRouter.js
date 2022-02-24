@@ -12,7 +12,7 @@ export function QuizRouter() {
           <Route path={"/"} element={<FrontPage />} />
           <Route path={"/question"} element={<ShowQuestion />} />
           <Route path={"/answer/*"} element={<ShowAnswer />} />
-          <Route path={"*"} element={<h1>Not Found</h1>} />
+          <Route path={"/*"} element={<h1>Not Found</h1>} />
         </Routes>
       </BrowserRouter>
     </div>
