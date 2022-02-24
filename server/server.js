@@ -21,12 +21,12 @@ app.get("/api/score", (req, res) => {
   res.json(score);
 });
 
-app.get("/api/random", (req, res) => {
+app.get("/api/quiz/random", (req, res) => {
   const { id, question, answers } = randomQuestion();
   res.json({ id, question, answers });
 });
 
-app.post("/api/answer", (req, res) => {
+app.post("/api/quiz", (req, res) => {
   const { id, answer } = req.body;
   const score = req.signedCookies.score
     ? JSON.parse(req.signedCookies.score)
@@ -43,10 +43,10 @@ app.post("/api/answer", (req, res) => {
   if (isCorrectAnswer(question, answer)) {
     score.correct += 1;
     res.cookie("score", JSON.stringify(score), { signed: true });
-    return res.json({ result: "correct " });
+    return res.json({ result: true });
   } else {
     res.cookie("score", JSON.stringify(score), { signed: true });
-    return res.json({ result: "incorrect " });
+    return res.json({ result: false });
   }
 });
 
@@ -59,6 +59,6 @@ app.use((req, res, next) => {
   }
 });
 
-const server = app.listen(process.env.PORT || 3000, () => {
+const server = app.listen(process.env.PORT || 5000, () => {
   console.log(`server started at http://localhost:${server.address().port}`);
 });
