@@ -33,4 +33,13 @@
 ## List questions
 - [x] import *questions.js* 
 - [x] Return list of random questions
-- [ ] Answer question function
+
+## Answer function
+- [x] List multiple choice answers
+- [x] Selecting an answer routes to correct/incorrect pages
+- [x] keeps score of correct vs. incorrect answers
+
+## Heroku 
+- [x] Creat new Heroku app linked to pg6301-innlevering repo.
+- [ ] Successfully deploy branch through Heroku
+
