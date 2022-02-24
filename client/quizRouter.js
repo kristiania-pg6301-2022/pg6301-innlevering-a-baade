@@ -1,6 +1,6 @@
 import * as React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { FrontPage } from "./FrontPage";
+import { FrontPage } from "./frontPage";
 import { ShowAnswer } from "./showAnswer";
 import ShowQuestion from "./quizApp";
 
