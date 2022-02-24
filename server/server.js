@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
-app.get("api/quiz/score", (req, res) => {
+app.get("/api/score", (req, res) => {
   const score = req.signedCookies.score
     ? JSON.parse(req.signedCookies.score)
     : {
@@ -21,12 +21,12 @@ app.get("api/quiz/score", (req, res) => {
   res.json(score);
 });
 
-app.get("api/quiz/random", (req, res) => {
+app.get("/api/random", (req, res) => {
   const { id, question, answers } = randomQuestion();
   res.json({ id, question, answers });
 });
 
-app.post("api/quiz/answer", (req, res) => {
+app.post("/api/answer", (req, res) => {
   const { id, answer } = req.body;
   const score = req.signedCookies.score
     ? JSON.parse(req.signedCookies.score)
