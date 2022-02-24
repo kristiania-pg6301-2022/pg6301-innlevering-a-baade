@@ -4,7 +4,18 @@
   "description": "- [x] Create a READE.md\r - [x] `npm init`/root\r - [x] npm install/root\r     - `npm i -D parcel jest prettier \"babel-jest @babel/preset-env\"`\r     - `npm i -P react react-dom react-router-dom`\r - [ ] Create client side files\r - [ ] `npm init`/client\r - [ ] npm install/client\r     - `npm i -D parcel jest prettier babel-jest @babel/preset-env`\r     - `npm i -P react react-dom react-router-dom`\r - [ ] Create server side files\r - [ ] `npm init`/server\r - [ ] npm install/server\r     - `npm i -D express body-parser`\r     - `npm i -P nodemon`",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cd server && npm start",
+    "dev": "concurrently npm:dev:client npm:dev:server",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cd client && npm install --include=dev && npm run build",
+    "build:server": "cd server && npm install",
+    "format": "prettier --write **/*.{js,jsx,ts,tsx}",
+    "format:check": "prettier --check **/*.{js,jsx,ts,tsx}",
+    "prettier:check": "prettier --check **/*.{js,jsx,ts,tsx}",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -17,15 +28,9 @@
   },
   "homepage": "https://github.com/kristiania-pg6301-2022/pg6301-innlevering-a-baade#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.16.11",
-    "babel-jest": "^27.5.1",
-    "jest": "^27.5.1",
+    "concurrently": "^7.0.0",
+    "husky": "^7.0.4",
     "parcel": "^2.3.1",
     "prettier": "^2.5.1"
-  },
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.1"
   }
 }
