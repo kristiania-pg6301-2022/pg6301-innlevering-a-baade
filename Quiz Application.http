@@ -1,4 +1,0 @@
-POST {{server}}/quiz
-
-###
-GET {{server}}/quiz
